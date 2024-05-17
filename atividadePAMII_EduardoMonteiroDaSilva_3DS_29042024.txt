@@ -1,0 +1,43 @@
+Nome: Eduardo Monteiro da Silva
+Turma: 3° Desenvolvimento de Sistemas
+Data: 29 / 04 / 2024
+
+Responda: 
+1 - Quais ações são necessárias para extender a classe SQLiteOpenHelper.
+R: É necessário usar extends para pegar os dados do SQLiteOpenHelper, logo após criar um método constructor com o mesmo nome da classe criada e passar os parâmentros necessários para essa classe.
+
+2 - Quais os parâmentros que temos que criar nessa classe.
+R: Os parâmetros necessários são: nome do banco, contexto ( O contexto serve para saber de que classe o método foi chamado ), factory e por fim versão do banco
+
+3 - Por que o contexto não é criado nessa classe.
+R: O contexto serve para saber de que classe o método foi chamado, então seria inútil criar um contexto na própria classe, por que seria o mesmo que se auto chamar.
+
+4 - Analise linha a linha a classe AppDataBase e diga com suas palavras o que faz cada linha
+R: 
+A) As primeiras linhas do programa importam os módulos que serão utilizados na classe
+
+B) public class AppDataBase extends SQLiteOpenHelper -> Está criando a classe e trazendo as propriedades e métodos da classe SQLite para a AppDataBase
+
+C)public static final String DB_NAME = "MeuApp.sqlite"; //cria uma constante com o nome do banco
+  public static final int VERSION = 1; // Cria uma variável com a versão do banco
+
+D) public AppDataBase(Context context) { //cria o método constructor do AppDataBase.
+        super(context, DB_NAME, null, VERSION); //Chama os métodos da superclasse e passa os parâmetros necessários.
+        Log.i(AppUtil.TAG, "AppDataSource: Criando banco de dados ..."); //Envia uma mensagem no log, para se ter certeza que o código está funcionando
+    }
+
+E) @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+}
+//Classes que foram @Override (subescritas) e estão vazias.
+
+5 - Como podemos fazer para rodar o app de banco de dados, e o que acontecerá no final da classe AppDataBase ao rodar o programa.
+R: é necessário instanciar a classe, ou extende-lá em outra para utilizar seus métodos, ao rodar, no console (Logcat) irá aparecer a mensagem que colocamos, no caso: "AppDataSource: Criando banco de dados ..."
+

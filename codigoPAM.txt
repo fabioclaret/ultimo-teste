@@ -1,0 +1,196 @@
+Main Activity
+
+package com.android.calculodemedia;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    EditText n1, n2, n3, n4, faltas;
+    Button btnCalcular;
+    TextView Resultado;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        n1=findViewById(R.id.editTextNota1);
+        n2=findViewById(R.id.editTextNota2);
+        n3=findViewById(R.id.editTextNota3);
+        n4=findViewById(R.id.editTextNota4);
+        faltas=findViewById(R.id.numeroFaltas);
+        btnCalcular=findViewById(R.id.btncalcular);
+        Resultado=findViewById(R.id.txtResultado);
+
+        btnCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View View) {
+               int nota1 = Integer.parseInt(n1.getText().toString());
+               int nota2 = Integer.parseInt(n1.getText().toString());
+               int nota3 = Integer.parseInt(n1.getText().toString());
+               int nota4 = Integer.parseInt(n1.getText().toString());
+               int falta = Integer.parseInt(faltas.getText().toString());
+
+               int media = (nota1 + nota2 + nota3 + nota4 )/4;
+
+               if (media >=5 && falta <=20 ){
+                   Resultado.setText("Aluno APROVADO com media " + media);
+                   Resultado.setTextColor(getColor(R.color.green));
+               }else if (falta >20 ){
+                   Resultado.setText("Numero de faltas " + falta + "\nAluno REPROVADO por faltas" + media );
+                   Resultado.setTextColor(getColor(R.color.red));
+               }else{
+                   Resultado.setText("Aluno Reprovado por media " + media);
+                   Resultado.setTextColor(getColor(R.color.red));
+               }
+
+
+            }
+        });
+    }
+
+    private boolean validarCampos() {
+       boolean retorno = true;
+
+       if (n1.getText().toString().isEmpty() ){
+           n1.setError("Digite nota 2");
+       }
+
+
+
+
+
+
+    }
+}
+
+
+
+Activity Main
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    tools:context=".MainActivity">
+
+    <EditText android:id="@+id/editTextNota1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/campo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nota 1"
+        android:inputType="number"
+        android:maxLength="2"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText android:id="@+id/editTextNota2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/campo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nota2"
+        android:inputType="number"
+        android:maxLength="2"
+        android:padding="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText android:id="@+id/editTextNota3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/campo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nota3"
+        android:inputType="number"
+        android:maxLength="2"
+
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNota1" />
+
+    <EditText android:id="@+id/editTextNota4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/campo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Nota4"
+        android:inputType="number"
+        android:maxLength="2"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNota2" />
+
+    <Button android:id="@+id/btncalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/botao"
+        android:padding="20dp"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroFaltas">
+
+
+    </Button>
+
+    <TextView android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Resultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalcular"></TextView>
+
+    <EditText android:id="@+id/numeroFaltas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/campo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Numero de faltas"
+        android:inputType="number"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNota3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

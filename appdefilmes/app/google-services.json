@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "386530795882",
+    "project_id": "app-de-filmes-f1d65",
+    "storage_bucket": "app-de-filmes-f1d65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386530795882:android:32801bd1173951119c4513",
+        "android_client_info": {
+          "package_name": "com.android.appdefilmes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAywVeGnenT65keJd644tcGf5m5AXvXSHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

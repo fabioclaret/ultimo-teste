@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styleAbout.css">
+</head>
+<body>
+    <header class="header">           <!--Logo na parte superior esquerda-->
+        <a href="#" class="logo">Balloons</a> <!--Link do logo-->
+
+        <nav class="navbar">  <!--sumário, home, pag inicial, etc..-->
+            <a href="/index.html">Inicio</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin">Login</button>
+        </nav>
+    </header>
+    <section class="section"><!--painel-->
+        <div class="wrapper">
+            <span class="icon-close">
+                <i class='bx bx-x'></i>
+            </span>
+
+            <div class="logreg-box">
+                <!--Formulario de Login-->
+                <div class="form-box login">
+                    <div class="logreg-tittle">
+                        <h2>Login</h2>
+                        <p>Faça login para utilizar a plataforma</p>
+                    </div>
+
+                    <form action="#"> <!--Formulario-->
+                        <div class="input-box"> <!--E-mail-->
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="email" required>
+                            <label>E-mail</label>
+                        </div>
+
+                        <div class="input-box"><!--Senha-->
+                            <span class="icon"><i class='bx bxs-lock'></i></span>
+                            <input type="password" required>
+                            <label>Senha</label>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Lembrar de mim</label>
+                            <a href="#">Esqueceu sua senha?</a>
+                        </div>
+
+                            <button type="submit" class="btn">Entrar</button>
+
+                            <div class="logreg-link">
+                                <p>Não tem uma conta?<a href="#" class="register-link">Inscreva-se</a></p>
+                        </div>
+                    </form>
+                </div>
+            
+                <!--formulario de registro-->
+                <div class="form-box register">
+                    <div class="logreg-tittle">
+                        <h2>Registro</h2>
+                        <p>Inscreva-se já no Balloons</p>
+                    </div>
+
+                    <form action="#"> <!--Formulario-->
+                        <div class="input-box"> <!--nome-->
+                            <span class="icon"><i class='bx bxs-user'></i></span>
+                            <input type="text" required>
+                            <label>Nome Completo</label>
+                        </div>
+
+                        <div class="input-box"> <!--E-mail-->
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input type="email" required>
+                            <label>E-mail</label>
+                        </div>
+
+                        <div class="input-box"><!--Senha-->
+                            <span class="icon"><i class='bx bxs-lock'></i></span>
+                            <input type="password" required>
+                            <label>Senha</label>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Concordo com os Termos de Serviço e a Política de Privacidade, incluindo o Uso de Cookies.</label>
+
+                        </div>
+
+                            <button type="submit" class="btn">Criar Conta</button>
+
+                            <div class="logreg-link">
+                                <p>Inscrito no Balloons?<a href="#" class="login-link">Inicie sua sessão</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+
+            <div class="media-options">
+                <a href="#">
+                    <i class='bx bxl-google' ></i>
+                    <span>Login with Google</span>
+                </a>
+                <a href="#">
+                    <i class='bx bxl-facebook-circle' ></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+        </div>
+        <div class="wrapperAbout">
+            <div class="person">
+                <div class="imagem">
+                    <img class="personLogo" src="./images/about/3.jpg" alt="douglasLogo">
+                </div>
+                <div class="texto">
+                <h2>@Douglas</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Qui enim corporis ipsam ut laborum 
+                    maxime provident nulla aperiam esse modi repellendus 
+                    libero magnam vero autem, quaerat quia itaque, impedit 
+                    cupiditate?</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn">Contatar</button>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imagem">
+                    <img class="personLogo" src="./images/about/2.jpg" alt="helderLogo">
+                </div>
+                <div class="texto">
+                <h2>@Helder</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Qui enim corporis ipsam ut laborum 
+                    maxime provident nulla aperiam esse modi repellendus 
+                    libero magnam vero autem, quaerat quia itaque, impedit 
+                    cupiditate?</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn">Contatar</button>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imagem">
+                    <img class="personLogo" src="./images/about/5.jpg" alt="isaiasLogo">
+                </div>
+                <div class="texto">
+                <h2>@Isaias</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Qui enim corporis ipsam ut laborum 
+                    maxime provident nulla aperiam esse modi repellendus 
+                    libero magnam vero autem, quaerat quia itaque, impedit 
+                    cupiditate?</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn">Contatar</button>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imagem">
+                    <img class="personLogo" src="./images/about/4.jpg" alt="iuryLogo">
+                </div>
+                <div class="texto">
+                <h2>@Iury</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Qui enim corporis ipsam ut laborum 
+                    maxime provident nulla aperiam esse modi repellendus 
+                    libero magnam vero autem, quaerat quia itaque, impedit 
+                    cupiditate?</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn">Contatar</button>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imagem">
+                    <img class="personLogo" src="./images/about/1.jpg" alt="whytaloLogo">
+                </div>
+                <div class="texto">
+                <h2>@Whytalo</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur 
+                    adipisicing elit. Qui enim corporis ipsam ut laborum 
+                    maxime provident nulla aperiam esse modi repellendus 
+                    libero magnam vero autem, quaerat quia itaque, impedit 
+                    cupiditate?</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn">Contatar</button>
+                </div>
+            </div>
+    </div> 
+    </section>
+    
+
+
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
